@@ -1,23 +1,25 @@
 import Carrinho from "pages/Carrinho";
 import Feira from "pages/Feira";
 import Login from "pages/Login";
-import { useState } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import { UsuarioProvder } from "pages/Common/Context/index";
+import { UsuarioProvder } from "pages/Common/Context/Usuario";
+import { CarrinhoProvider } from "pages/Common/Context/Carrinho";
 
 function Router (){   
 
     return (
         <BrowserRouter>
             <Switch>
-                <Route exact path="/" >
-                    <UsuarioProvder>
-                    <Login/>
-                    </UsuarioProvder>
-                </Route>
-                <Route path='/feira'>
-                    <Feira />
-                </Route>
+                <UsuarioProvder>
+                    <Route exact path="/" >
+                        <Login/>
+                    </Route>
+                    <CarrinhoProvider>
+                        <Route path='/feira'>
+                            <Feira />
+                        </Route>
+                    </CarrinhoProvider>
+                </UsuarioProvder>
                 <Route path='/carrinho' component={Carrinho}/>
             </Switch>
         </BrowserRouter>

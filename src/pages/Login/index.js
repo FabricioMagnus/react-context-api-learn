@@ -10,7 +10,7 @@ import {
   InputAdornment 
 } from '@material-ui/core';
 import { useHistory } from 'react-router-dom';
-import { UsuarioContext } from '../Common/Context/index';
+import { UsuarioContext } from '../Common/Context/Usuario';
 import { useContext } from 'react';
 
 function Login() {
