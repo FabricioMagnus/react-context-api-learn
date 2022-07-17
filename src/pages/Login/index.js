@@ -43,13 +43,14 @@ function Login() {
               startAdornment={
                 <InputAdornment position="start">
                 R$
-              </InputAdornment>
+                </InputAdornment>
             }
             />
           </InputContainer>
           <Button      
             variant="contained"
             color="primary"
+            disabled={!nome || !saldo}
             onClick={() => {
               history.push('/feira');
             }}

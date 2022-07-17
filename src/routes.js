@@ -18,9 +18,12 @@ function Router (){
                         <Route path='/feira'>
                             <Feira />
                         </Route>
+                        <Route path='/carrinho'>
+                            <Carrinho />
+                        </Route>
                     </CarrinhoProvider>
                 </UsuarioProvder>
-                <Route path='/carrinho' component={Carrinho}/>
+                
             </Switch>
         </BrowserRouter>
     )

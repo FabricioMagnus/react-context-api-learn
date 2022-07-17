@@ -13,7 +13,7 @@ function Produto({
   unidade
 }) {
 
-  const { carrinho, addCarrinho } = useCarrinho();
+  const { carrinho, addCarrinho , removeProduto } = useCarrinho();
   const produtoCarrinho = carrinho.find(produto => produto.id === id);
   
    return (
@@ -30,6 +30,8 @@ function Produto({
         <div>
           <IconButton
             color="secondary"
+            onClick={() => removeProduto(id)}
+            disabled={!produtoCarrinho}
           >
             <RemoveIcon />
           </IconButton>
