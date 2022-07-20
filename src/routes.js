@@ -15,16 +15,16 @@ function Router (){
                     <Route exact path="/" >
                         <Login/>
                     </Route>
-                    <CarrinhoProvider>
+                        <PagamentoProvider>
+                         <CarrinhoProvider>
                         <Route path='/feira'>
                             <Feira />
                         </Route>
-                        <PagamentoProvider>
                             <Route path='/carrinho'>
                                 <Carrinho />
                             </Route>
+                        </CarrinhoProvider>
                         </PagamentoProvider>
-                    </CarrinhoProvider>
                 </UsuarioProvder>
                 
             </Switch>
